@@ -1,8 +1,9 @@
 /* myLoc.js */
 //추가1
-
-
-
+var ourCoords = {
+	latitude: 47.624851,
+	longitude: -122.52099
+};
 
 
 window.onload = getMyLocation;
@@ -27,8 +28,9 @@ function displayLocation(position) {
 	div.innerHTML = "당신은 위도: " + latitude + ", 경도: " + longitude + "에 있습니다";
 
 //추가2
-
-
+var km = computeDistance(position.coords, ourCoords);
+var distance = document.getElementById("distance");
+distance.innerHTML = "당신은 WickedlySmart HQ와 " + km + "km 떨어져 있습니다.";
 
 }
 
@@ -38,7 +40,23 @@ function displayLocation(position) {
 // 구면 코사인 법칙으로 두 위도/경도 지점의 거리를 구함
 //
 //추가3
+function computeDistance(startCoords, destCoords) {
+	var startLatRads = degreesToRadians(startCoords.latitude);
+	var startLongRads = degreesToRadians(startCoords.longitude);
+	var destLatRads = degreesToRadians(destCoords.latitude);
+	var destLongRads = degreesToRadians(destCoords.longitude);
 
+	var Radius = 6371; // 지구의 반경 (km)
+	var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) +
+														Math.cos(startLatRads) * Math.cos(destLatRads) *
+									Math.cos(startLongRads - destLongRads)) * Radius;
+	return distance;
+
+	function degreesToRadians(degrees) {
+		radians = (degrees * Math.PI)/180;
+		return radians;
+	}
+}
 
 
 
