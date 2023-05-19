@@ -2,7 +2,8 @@
 
 //추가2
 var map = null;
-var ourCoords =  {
+var watchId = null;
+var ourCoords = {
 	latitude: 47.624851,
 	longitude: -122.52099
 };
@@ -10,14 +11,16 @@ var ourCoords =  {
 window.onload = getMyLocation;
 
 //추가1
-
-
-
-
-
-
-
-
+function getMyLocation() {
+	if (navigator.geolocation) {
+		var watchButton = document.getElementById('watch');
+		watchButton.onclick = watchLocation;
+		var clearWatchButton = document.getElementById('clearWatch');
+		clearWatchButton.onclick = clearWatch;
+	} else {
+		alert("이런, 지오로케이션이 제공되지 않네요");
+	}
+}
 
 
 
@@ -33,8 +36,10 @@ function displayLocation(position) {
 	var distance = document.getElementById("distance");
 	distance.innerHTML = "당신은 WickedlySmart HQ와 " + km + "km 떨어져 있습니다";
 
-//추가5
-
+	//추가5
+	if (map == null) {
+		showMap(position.coords);
+	}
 
 }
 
@@ -50,23 +55,23 @@ function computeDistance(startCoords, destCoords) {
 	var destLongRads = degreesToRadians(destCoords.longitude);
 
 	var Radius = 6371; // radius of the Earth in km
-	var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) + 
-					Math.cos(startLatRads) * Math.cos(destLatRads) *
-					Math.cos(startLongRads - destLongRads)) * Radius;
+	var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) +
+		Math.cos(startLatRads) * Math.cos(destLatRads) *
+		Math.cos(startLongRads - destLongRads)) * Radius;
 
 	return distance;
 }
 
 function degreesToRadians(degrees) {
-	radians = (degrees * Math.PI)/180;
+	radians = (degrees * Math.PI) / 180;
 	return radians;
 }
 
 // ------------------ 준비 코드 종료 -----------------
 
 function showMap(coords) {
-	var googleLatAndLong = new google.maps.LatLng(coords.latitude, 
-												  coords.longitude);
+	var googleLatAndLong = new google.maps.LatLng(coords.latitude,
+		coords.longitude);
 	var mapOptions = {
 		zoom: 10,
 		center: googleLatAndLong,
@@ -97,7 +102,7 @@ function addMarker(map, latlong, title, content) {
 
 	var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
 
-	google.maps.event.addListener(marker, 'click', function() {
+	google.maps.event.addListener(marker, 'click', function () {
 		infoWindow.open(map);
 	});
 }
@@ -123,9 +128,14 @@ function displayError(error) {
 //
 
 //추가3
-
-
-
+function watchLocation() {
+	watchId = navigator.geolocation.watchPosition(displayLocation, displayError);
+}
 
 //추가4
-
+function clearWatch() {
+	if (watchId) {
+		navigator.geolocation.clearWatch(watchId);
+		watchId = null;
+	}
+}
