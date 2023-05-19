@@ -12,7 +12,7 @@ function getMyLocation() {
 	if (navigator.geolocation) {
 
 		navigator.geolocation.getCurrentPosition(
-			displayLocation, 
+			displayLocation,
 			displayError);
 	}
 	else {
@@ -27,10 +27,10 @@ function displayLocation(position) {
 	var div = document.getElementById("location");
 	div.innerHTML = "당신은 위도: " + latitude + ", 경도: " + longitude + "에 있습니다";
 
-//추가2
-var km = computeDistance(position.coords, ourCoords);
-var distance = document.getElementById("distance");
-distance.innerHTML = "당신은 WickedlySmart HQ와 " + km + "km 떨어져 있습니다.";
+	//추가2
+	var km = computeDistance(position.coords, ourCoords);
+	var distance = document.getElementById("distance");
+	distance.innerHTML = "당신은 WickedlySmart HQ와 " + km + "km 떨어져 있습니다.";
 
 }
 
@@ -48,12 +48,12 @@ function computeDistance(startCoords, destCoords) {
 
 	var Radius = 6371; // 지구의 반경 (km)
 	var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) +
-														Math.cos(startLatRads) * Math.cos(destLatRads) *
-									Math.cos(startLongRads - destLongRads)) * Radius;
+		Math.cos(startLatRads) * Math.cos(destLatRads) *
+		Math.cos(startLongRads - destLongRads)) * Radius;
 	return distance;
 
 	function degreesToRadians(degrees) {
-		radians = (degrees * Math.PI)/180;
+		radians = (degrees * Math.PI) / 180;
 		return radians;
 	}
 }
