@@ -1,7 +1,7 @@
 /* myLoc.js */
 
 var map = null;
-var ourCoords =  {
+var ourCoords = {
 	latitude: 47.624851,
 	longitude: -122.52099
 };
@@ -12,7 +12,7 @@ function getMyLocation() {
 	if (navigator.geolocation) {
 
 		navigator.geolocation.getCurrentPosition(
-			displayLocation, 
+			displayLocation,
 			displayError);
 	}
 	else {
@@ -24,7 +24,7 @@ function displayLocation(position) {
 	var latitude = position.coords.latitude;
 	var longitude = position.coords.longitude;
 
-var div = document.getElementById("location");
+	var div = document.getElementById("location");
 	div.innerHTML = "당신은 위도: " + latitude + ", 경도: " + longitude + "에 있습니다";
 
 
@@ -47,15 +47,15 @@ function computeDistance(startCoords, destCoords) {
 	var destLongRads = degreesToRadians(destCoords.longitude);
 
 	var Radius = 6371; // radius of the Earth in km
-	var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) + 
-					Math.cos(startLatRads) * Math.cos(destLatRads) *
-					Math.cos(startLongRads - destLongRads)) * Radius;
+	var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) +
+		Math.cos(startLatRads) * Math.cos(destLatRads) *
+		Math.cos(startLongRads - destLongRads)) * Radius;
 
 	return distance;
 }
 
 function degreesToRadians(degrees) {
-	radians = (degrees * Math.PI)/180;
+	radians = (degrees * Math.PI) / 180;
 	return radians;
 }
 
@@ -68,34 +68,35 @@ function showMap(coords) {
 		center: googleLatAndLong,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
+
 	var mapDiv = document.getElementById("map");
 	map = new google.maps.Map(mapDiv, mapOptions);
 
-// 사용자 마커를 추가
-//추가2
-
-
-
+	// 사용자 마커를 추가
+	//추가2
+	var title = "당신의 위치";
+	var content = " 당신은 여기에 있습니다: " +
+		coords.latitude + ", " + coords.longitude;
+	addMarker(map, googleLatAndLong, title, content);
 }
 
 function addMarker(map, latlong, title, content) {
-//추가1
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
+	//추가1
+	var markerOptions = {
+		position: latlong,
+		map: map,
+		title: title,
+		clickable: true
+	};
+	var marker = new google.maps.Marker(markerOptions);
+	var infoWindowOptions = {
+		content: content,
+		position: latlong
+	};
+	var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
+	google.maps.event.addListener(marker, 'click', function () {
+		infoWindow.open(map);
+	});
 }
 
 
@@ -113,4 +114,3 @@ function displayError(error) {
 	var div = document.getElementById("location");
 	div.innerHTML = errorMessage;
 }
-
