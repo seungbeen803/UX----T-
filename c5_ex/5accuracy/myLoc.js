@@ -1,7 +1,7 @@
 /* myLoc.js */
 
 var map = null;
-var ourCoords =  {
+var ourCoords = {
 	latitude: 47.624851,
 	longitude: -122.52099
 };
@@ -12,7 +12,7 @@ function getMyLocation() {
 	if (navigator.geolocation) {
 
 		navigator.geolocation.getCurrentPosition(
-			displayLocation, 
+			displayLocation,
 			displayError);
 	}
 	else {
@@ -27,6 +27,7 @@ function displayLocation(position) {
 	var div = document.getElementById("location");
 	div.innerHTML = "당신은 위도: " + latitude + ", 경도: " + longitude + "에 있습니다";
 	//추가1
+	div.innerHTML += " (" + position.coords.accuracy + "m 정확도)";
 
 	var km = computeDistance(position.coords, ourCoords);
 	var distance = document.getElementById("distance");
@@ -47,15 +48,15 @@ function computeDistance(startCoords, destCoords) {
 	var destLongRads = degreesToRadians(destCoords.longitude);
 
 	var Radius = 6371; // 지구의 반경 (km)
-	var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) + 
-					Math.cos(startLatRads) * Math.cos(destLatRads) *
-					Math.cos(startLongRads - destLongRads)) * Radius;
+	var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) +
+		Math.cos(startLatRads) * Math.cos(destLatRads) *
+		Math.cos(startLongRads - destLongRads)) * Radius;
 
 	return distance;
 }
 
 function degreesToRadians(degrees) {
-	radians = (degrees * Math.PI)/180;
+	radians = (degrees * Math.PI) / 180;
 	return radians;
 }
 
@@ -94,7 +95,7 @@ function addMarker(map, latlong, title, content) {
 
 	var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
 
-	google.maps.event.addListener(marker, 'click', function() {
+	google.maps.event.addListener(marker, 'click', function () {
 		infoWindow.open(map);
 	});
 }
