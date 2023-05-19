@@ -2,7 +2,7 @@
 
 var watchId = null;
 var map = null;
-var ourCoords =  {
+var ourCoords = {
 	latitude: 47.624851,
 	longitude: -122.52099
 };
@@ -36,9 +36,10 @@ function displayLocation(position) {
 	if (map == null) {
 		showMap(position.coords);
 	}
-//추가2	
-
-
+	//추가2	
+	else {
+		scrollMapToPosition(position.coords);
+	}
 }
 
 
@@ -53,23 +54,23 @@ function computeDistance(startCoords, destCoords) {
 	var destLongRads = degreesToRadians(destCoords.longitude);
 
 	var Radius = 6371; // radius of the Earth in km
-	var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) + 
-					Math.cos(startLatRads) * Math.cos(destLatRads) *
-					Math.cos(startLongRads - destLongRads)) * Radius;
+	var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) +
+		Math.cos(startLatRads) * Math.cos(destLatRads) *
+		Math.cos(startLongRads - destLongRads)) * Radius;
 
 	return distance;
 }
 
 function degreesToRadians(degrees) {
-	radians = (degrees * Math.PI)/180;
+	radians = (degrees * Math.PI) / 180;
 	return radians;
 }
 
 // ------------------ 준비 코드 종료 -----------------
 
 function showMap(coords) {
-	var googleLatAndLong = new google.maps.LatLng(coords.latitude, 
-												  coords.longitude);
+	var googleLatAndLong = new google.maps.LatLng(coords.latitude,
+		coords.longitude);
 	var mapOptions = {
 		zoom: 10,
 		center: googleLatAndLong,
@@ -100,7 +101,7 @@ function addMarker(map, latlong, title, content) {
 
 	var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
 
-	google.maps.event.addListener(marker, 'click', function() {
+	google.maps.event.addListener(marker, 'click', function () {
 		infoWindow.open(map);
 	});
 }
@@ -126,20 +127,21 @@ function displayError(error) {
 //
 function watchLocation() {
 	watchId = navigator.geolocation.watchPosition(
-					displayLocation, 
-					displayError);
+		displayLocation,
+		displayError);
 }
 
 //추가1
+function scrollMapToPosition(coords) {
+	var latitude = coords.latitude;
+	var longitude = coords.longitude;
 
+	var latlong = new google.maps.LatLng(latitude, longitude);
+	map.panTo(latlong);
 
-
-
-
-
-
-
-
+	// 새 마커 추가
+	addMarker(map, latlong, "Your new location", "You moved to: " + latitude + ", " + longitude);
+}
 
 
 function clearWatch() {
