@@ -1,0 +1,32 @@
+body {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+h1 {
+  text-align: center;
+  color: lightcoral;
+}
+/* 전체배경 div id="sales" ==< #으로 접근 */
+div#sales {
+	background-color: lightpink;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	margin: 10px 0px 0px 0px;
+	padding: 0px;
+	border: 5px solid lightsalmon;
+}
+/* 핑크색 위에, 글자색 #ff0000, div의 saleItem은 class이므로 div.saleItem 점으로 접근 */
+div.saleItem {
+	font-family: Verdana, Helvetica, sans-serif;
+	color: lightslategray;
+	padding: 10px;
+}
+/* 이후 세 개가 함께 나와야 차례대로 행의 색이 바뀜, 두번째 행의 색 노란색 #fafaa */
+div.saleItem:nth-child(2n) {
+	background-color: lightcyan;
+	margin-top: 10px;
+}
+div.saleItem:nth-child(2n+1) {
+	background-color: lightgoldenrodyellow;
+	margin-top: 10px;
+}
