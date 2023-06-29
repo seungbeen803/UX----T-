@@ -2,6 +2,7 @@
 <?xml-stylesheet type="text/css" href="cd_catalog.css"?>
 <CATALOG>
 	<CD>
+		<No>1</No>
 		<TITLE>Empire Burlesque</TITLE>
 		<ARTIST>Bob Dylan</ARTIST>
 		<COUNTRY>USA</COUNTRY>
@@ -10,6 +11,7 @@
 		<YEAR>1985</YEAR>
 	</CD>
 	<CD>
+	  <No>2</No>
 		<TITLE>Hide your heart</TITLE>
 		<ARTIST>Bonnie Tyler</ARTIST>
 		<COUNTRY>UK</COUNTRY>
@@ -18,6 +20,7 @@
 		<YEAR>1988</YEAR>
 	</CD>
 	<CD>
+		<No>3</No>
 		<TITLE>Greatest Hits</TITLE>
 		<ARTIST>Dolly Parton</ARTIST>
 		<COUNTRY>USA</COUNTRY>
@@ -26,6 +29,7 @@
 		<YEAR>1982</YEAR>
 	</CD>
 	<CD>
+		<No>4</No>
 		<TITLE>Still got the blues</TITLE>
 		<ARTIST>Gary Moore</ARTIST>
 		<COUNTRY>UK</COUNTRY>
@@ -34,6 +38,7 @@
 		<YEAR>1990</YEAR>
 	</CD>
 	<CD>
+		<No>5</No>
 		<TITLE>Eros</TITLE>
 		<ARTIST>Eros Ramazzotti</ARTIST>
 		<COUNTRY>EU</COUNTRY>
@@ -42,6 +47,7 @@
 		<YEAR>1997</YEAR>
 	</CD>
 	<CD>
+		<No>6</No>
 		<TITLE>One night only</TITLE>
 		<ARTIST>Bee Gees</ARTIST>
 		<COUNTRY>UK</COUNTRY>
@@ -50,6 +56,7 @@
 		<YEAR>1998</YEAR>
 	</CD>
 	<CD>
+		<No>7</No>
 		<TITLE>Sylvias Mother</TITLE>
 		<ARTIST>Dr.Hook</ARTIST>
 		<COUNTRY>UK</COUNTRY>
@@ -58,6 +65,7 @@
 		<YEAR>1973</YEAR>
 	</CD>
 	<CD>
+		<No>8</No>
 		<TITLE>Maggie May</TITLE>
 		<ARTIST>Rod Stewart</ARTIST>
 		<COUNTRY>UK</COUNTRY>
@@ -66,6 +74,7 @@
 		<YEAR>1990</YEAR>
 	</CD>
 	<CD>
+		<No>9</No>
 		<TITLE>Romanza</TITLE>
 		<ARTIST>Andrea Bocelli</ARTIST>
 		<COUNTRY>EU</COUNTRY>
@@ -74,6 +83,7 @@
 		<YEAR>1996</YEAR>
 	</CD>
 	<CD>
+		<No>10</No>
 		<TITLE>When a man loves a woman</TITLE>
 		<ARTIST>Percy Sledge</ARTIST>
 		<COUNTRY>USA</COUNTRY>
@@ -82,6 +92,7 @@
 		<YEAR>1987</YEAR>
 	</CD>
 	<CD>
+		<No>11</No>
 		<TITLE>Black angel</TITLE>
 		<ARTIST>Savage Rose</ARTIST>
 		<COUNTRY>EU</COUNTRY>
@@ -98,6 +109,7 @@
 		<YEAR>1999</YEAR>
 	</CD>
 	<CD>
+		<No>12</No>
 		<TITLE>For the good times</TITLE>
 		<ARTIST>Kenny Rogers</ARTIST>
 		<COUNTRY>UK</COUNTRY>
@@ -106,6 +118,7 @@
 		<YEAR>1995</YEAR>
 	</CD>
 	<CD>
+		<No>13</No>
 		<TITLE>Big Willie style</TITLE>
 		<ARTIST>Will Smith</ARTIST>
 		<COUNTRY>USA</COUNTRY>
@@ -114,6 +127,7 @@
 		<YEAR>1997</YEAR>
 	</CD>
 	<CD>
+		<No>14</No>
 		<TITLE>Tupelo Honey</TITLE>
 		<ARTIST>Van Morrison</ARTIST>
 		<COUNTRY>UK</COUNTRY>
@@ -122,6 +136,7 @@
 		<YEAR>1971</YEAR>
 	</CD>
 	<CD>
+		<No>15</No>
 		<TITLE>Soulsville</TITLE>
 		<ARTIST>Jorn Hoel</ARTIST>
 		<COUNTRY>Norway</COUNTRY>
@@ -130,6 +145,7 @@
 		<YEAR>1996</YEAR>
 	</CD>
 	<CD>
+		<No>16</No>
 		<TITLE>The very best of</TITLE>
 		<ARTIST>Cat Stevens</ARTIST>
 		<COUNTRY>UK</COUNTRY>
@@ -138,6 +154,7 @@
 		<YEAR>1990</YEAR>
 	</CD>
 	<CD>
+		<No>17</No>
 		<TITLE>Stop</TITLE>
 		<ARTIST>Sam Brown</ARTIST>
 		<COUNTRY>UK</COUNTRY>
@@ -146,6 +163,7 @@
 		<YEAR>1988</YEAR>
 	</CD>
 	<CD>
+		<No>18</No>
 		<TITLE>Bridge of Spies</TITLE>
 		<ARTIST>T'Pau</ARTIST>
 		<COUNTRY>UK</COUNTRY>
@@ -154,6 +172,7 @@
 		<YEAR>1987</YEAR>
 	</CD>
 	<CD>
+		<No>19</No>
 		<TITLE>Private Dancer</TITLE>
 		<ARTIST>Tina Turner</ARTIST>
 		<COUNTRY>UK</COUNTRY>
@@ -162,6 +181,7 @@
 		<YEAR>1983</YEAR>
 	</CD>
 	<CD>
+		<No>20</No>
 		<TITLE>Midt om natten</TITLE>
 		<ARTIST>Kim Larsen</ARTIST>
 		<COUNTRY>EU</COUNTRY>
@@ -170,6 +190,7 @@
 		<YEAR>1983</YEAR>
 	</CD>
 	<CD>
+		<No>21</No>
 		<TITLE>Pavarotti Gala Concert</TITLE>
 		<ARTIST>Luciano Pavarotti</ARTIST>
 		<COUNTRY>UK</COUNTRY>
@@ -178,6 +199,7 @@
 		<YEAR>1991</YEAR>
 	</CD>
 	<CD>
+		<No>22</No>
 		<TITLE>The dock of the bay</TITLE>
 		<ARTIST>Otis Redding</ARTIST>
 		<COUNTRY>USA</COUNTRY>
@@ -186,6 +208,7 @@
 		<YEAR>1987</YEAR>
 	</CD>
 	<CD>
+		<No>23</No>
 		<TITLE>Picture book</TITLE>
 		<ARTIST>Simply Red</ARTIST>
 		<COUNTRY>EU</COUNTRY>
@@ -194,6 +217,7 @@
 		<YEAR>1985</YEAR>
 	</CD>
 	<CD>
+		<No>24</No>
 		<TITLE>Red</TITLE>
 		<ARTIST>The Communards</ARTIST>
 		<COUNTRY>UK</COUNTRY>
@@ -202,6 +226,7 @@
 		<YEAR>1987</YEAR>
 	</CD>
 	<CD>
+		<No>25</No>
 		<TITLE>Unchain my heart</TITLE>
 		<ARTIST>Joe Cocker</ARTIST>
 		<COUNTRY>USA</COUNTRY>
