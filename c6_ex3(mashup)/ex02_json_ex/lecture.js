@@ -4,7 +4,7 @@ window.onload = function() {
 }
 function handleRefresh() {
 	
-	var url = "http://openapi.seoul.go.kr:8088/726c48657673657537366d63796661/json/GwanakClassLectureList/1/100/"
+	var url = "http://openapi.seoul.go.kr:8088/726c48657673657537366d63796661/json/GwanakClassLectureList/1/100/2023/"
 	$.getJSON(url, updatelecture);
 }	
 
