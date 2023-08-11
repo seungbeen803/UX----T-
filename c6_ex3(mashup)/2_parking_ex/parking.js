@@ -26,7 +26,7 @@ function handleRefresh() {
 	{
 	var j = i + 999;
 	// var url = "http://openAPI.seoul.go.kr:8088/644d42625173756e35354e6d636d63/json/GetParkInfo/"+i+"/"+j;
-	var url = "https://proxyserver4cors.herokuapp.com/" + "http://openAPI.seoul.go.kr:8088/644d42625173756e35354e6d636d63/json/GetParkInfo/"+i+"/"+j;
+	var url = "https://proxyserver4cors.herokuapp.com/" + "http://openAPI.seoul.go.kr:8088/726c48657673657537366d63796661/json/GetParkInfo/"+i+"/"+j;
 
 
     $.getJSON(url, updatePark);
